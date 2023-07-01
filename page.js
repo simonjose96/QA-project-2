@@ -3,16 +3,33 @@ module.exports = {
     fromField: '#from',
     toField: '#to',
     phoneNumberField: '#phone',
-    codeField: '#code',
+    cardNumberField: '#number',
+    codeField: '.card-second-row #code',
+    drivermessage: '#comment',
+
     // Buttons
-    callATaxiButton: 'button=Call a taxi',
+    callATaxiButton: '//button[contains(text(), "Call a taxi")]',
+    SupportiveButton: '//div[starts-with(text(), "Supportive")]',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
-    nextButton: 'button=Next',
-    confirmButton: 'button=Confirm',
+    PaymentmethodButton:'//div[@class="pp-text"]',
+    AddcardButton: 'div=Add card',
+    randomclick: '.plc',
+    nextButton: '//button[contains(text(), "Next")]',
+    confirmButton: '//button[contains(text(), "Confirm")]',
+    linkButton: '//button[contains(text(), "Link")]',
+    closebutton: '.payment-picker .section.active .close-button',
+    orderrequirements: '//div[@class="reqs-header"]',
+    slider: '//div[contains(text(),"Blanket and handkerchiefs")]/following-sibling::div',
+    counterplus: '.r-counter .counter .counter-plus',
     // Modals
     phoneNumberModal: '.modal',
+    carmodal: '.workflow-subcontainer.tariff-picker.tariff-cards',
+
+    //grid
+    blanketlabel: '//div[starts-with(text(), "Blanket and handkerchiefs")]'
+
     // Functions
-    fillAddresses: async function(from, to) {
+    /*fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
         await fromField.setValue(from);
         const toField = await $(this.toField);
@@ -47,5 +64,5 @@ module.exports = {
         const code = await requests[0].response.body.code
         await codeField.setValue(code)
         await $(this.confirmButton).click()
-    },
+    },*/
 };
